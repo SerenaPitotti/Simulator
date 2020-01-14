@@ -1,0 +1,49 @@
+<div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+        <div class='modal-header'>
+            <h5 class='modal-title text-center'>Edit an Area<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></h5>
+        </div>
+        <div class='modal-body'>
+            <form id='editAreaForm' >
+                <div class='form-group row'>
+                    <label for='nomeArea' class='col-sm-5 col-form-label'>Area:</label>
+                    <div class='col-sm-7'><p class='form-control-static' id='nomeArea'>{{ Nome }}</p></div>
+                </div>
+                <div class='form-group row'>
+                    <label for='nomeMappaArea' class='col-sm-5 col-form-label'>Map area:</label>
+                    <div class='col-sm-7'><p class='form-control-static' id='nomeMappaArea'>{{ NomeMappa }}</p></div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-5 col-form-label' for='probIniziale'>Area Initial Probability:  </label>
+                    <div class='col-sm-7'><input type='text' class='form-control' name='probIniziale' id='probIniziale' value='{{ ProbIniz }}' /></div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-5 col-form-label' for='pesoArea'>Area Weight:  </label>
+                    <div class='col-sm-7'><input type='text' class='form-control' name='pesoArea' id='pesoArea' value='{{ Peso }}' /></div>
+                </div>
+                <div class='form-group' id='centroAreaEdit'>
+                    <label class='col-sm-12 col-form-label text-center' for='centroArea'>Area Center:  </label>
+                    <div class='form-group row'>
+                        <label class='col-sm-2 col-form-label' for='latitudineCentroAreaEdit'>Latitude:  </label>
+                        <div class='col-sm-4'>
+                            <input type='text' class='form-control' name='latitudineCentroAreaEdit' id='latitudineCentroAreaEdit' value='{{Latitudine}}' />
+                        </div>
+                        <div>
+                            <label class='col-sm-2 col-form-label' for='longitudineCentroAreaEdit'>Longitude:  </label>
+                            <div class='col-sm-4'>
+                                <input type='text' class='form-control' name='longitudineCentroAreaEdit' id='longitudineCentroAreaEdit' value='{{Longitudine}}' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='modal-footer'>
+                    <button type='submit' class='btn btn-primary'>OK</button>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>
+
+            
+            

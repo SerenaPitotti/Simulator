@@ -1,0 +1,17 @@
+<!-- 619 log.js  e 113 drawsection.js-->
+    <div class='text-center h5'>
+        {{#if nomeMappa}}
+            <span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> Not updated {{ nomeMappa }} Map. Click on <button type='button' id='updateMap' class='btn btn-xs'><span class='glyphicon glyphicon-refresh'></span> Update</button> to update it. 
+        {{/if}}
+        {{#if drawLink}}
+            <span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> Double click on start area or <button type='button' id='cancelLink' class='btn btn-xs'>Cancel</button> to abort. 
+        {{/if}}
+        {{#if center}}
+            <span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> Drag the marker on the new area to modify its center. Click on <button type='button' id='setCenter' class='btn btn-xs'>Set</button> to set it. Click on <button type='button' id='annullaInserimentoArea' class='btn btn-xs'>Cancel</button> to abort. 
+        {{/if}}
+        {{#if drawLinkEnd}}
+            <span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> Double click on end area or <button type='button' id='cancelLink' class='btn btn-xs'>Cancel</button> to abort.
+        {{/if}}
+    </div>
+
+        

@@ -1,0 +1,28 @@
+<div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+        <div class='modal-header'>
+            <h5 class='modal-title text-center'>Remove a Link<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></h5>
+        </div>
+        <div class='modal-body'>
+            <div>You are going to remove the following link:</div>  
+            <form>
+                <div class='form-group'>
+                    <label for='startArea' class='col-sm-5 col-form-label'>Start Area:</label>
+                    <div class='col-sm-7'><p class='form-control-static' >{{ nomeAreaStart }}</p></div>
+                </div>
+                <div class='form-group'>
+                    <label for='endArea' class='col-sm-5 col-form-label'>End Area:</label>
+                    <div class='col-sm-7'><p class='form-control-static' >{{ nomeAreaEnd }}</p></div>
+                </div>        
+                <div class='form-group'>
+                    <label class='col-sm-5 col-form-label' for='probProp'>Propagation Probability Link:</label>
+                    <div class='col-sm-7'><p class='form-control-static'>{{ prob }}</p></div>
+                </div>  
+                <div class="text-right">
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+                    <button type='button' id='removeLink' class='btn btn-primary' data-dismiss='modal'>OK</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

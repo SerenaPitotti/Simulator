@@ -1,0 +1,161 @@
+
+    <noscript>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <!--<img src="./Immagini/GeoSafe.JPG" alt="GeoSafe Icon" class="col-xs-12" />-->
+                    <img src="./Immagini/GeoSafe.JPG" alt="GeoSafe Icon" class="img-responsive" />
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-xs-11 col-xs-offset-1">
+                    <h1>JavaScript Required!</h1>
+                    <h2>GeoSafe Application requires JavaScript to work.</h2>
+                    <h2>This web browser either does not support JavaScript or script are being blocked.</h2>
+                    <h2>To find out whether your browser supports JavaScript or to allow script, see the browser's online help.</h2>
+                </div>
+            </div>
+        </div>
+    </noscript> 
+    <!-- CONTENUTO DELLA PAGINA ... -->
+    
+    <nav class="navbar navbar-default" role="navigation">
+        
+        <!—- Logo e pulsante per barra ridimensionata -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavBar">
+                <span class="sr-only">Espandi barra di navigazione</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">GeoSafe</a> <!--logo, realizzato mediante un collegamento con classe navbar-brand;-->
+        </div>
+
+        <!—- Elementi della barra -->
+        <div class="collapse navbar-collapse" id="NavBar">
+            <ul class="nav navbar-nav navbar-right">
+               <!-- <li><a role='button' id="centriAree" class="disattivato">Centri</a></li>
+                <li><a role='button' id="addAreaProva" class="disattivato">AddArea</a></li>
+                <li><a role='button' id="addAree" class="disattivato">AddAree</a></li>
+                <li><a role='button' id="addProbIniz" class="disattivato">AddprobInizAree</a></li>
+                <li><a role='button' id="cc" class="disattivato">AddLinkAree</a></li>-->
+                <li><a role='button' id="simulatefireProp" class="disattivato" style="display:none;">Simulate Propagation Map</a></li>
+                <li><a role='button' id="simulaterisk" class="disattivato" style="display:none;">Simulate Risk Map</a></li>
+                <li><a role='button' id="risk" class="disattivato">Risk Map</a></li>
+                <li><a role='button' id="fireProp" class="disattivato">Propagation Map</a></li>
+                <li><a role='button' id="value" class="disattivato">Value Map</a></li>
+                <li><a role='button' id="link" class="disattivato">Link Map</a></li>
+                <li><a role='button' id="probIniz" class="disattivato">Initial Probability Map</a></li>
+                <li><a role='button' id="logIn" data-toggle="modal" data-target="#logInModal"><span class="glyphicon glyphicon-log-in"></span> LogIn</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Questo div imposta un margine a destra ed uno a sinistra ed imposta la 
+    sua larghezza in base alla dimensione del dispositivo su cui la pagina è visualizzata.-->
+    <div  id='container' class="container">
+        <div id='infoHelp' class='row'></div>
+        <!--<div class="row"> <button type="button" class="btn btn-outline-primary" id="probIniz">Mappa delle Probabilità Iniziali</button></div>
+        <!--All'interno del nostro contenitore (.container) abbiamo creato un div di classe .row
+        il quale costituisce una riga del layout -->
+        <br>
+        
+        <div class="row" id="rowContainer">
+            <!--Anche le colonne sono create con dei div che usano delle apposite classi. 
+            Notate che il nome delle classi che definiscono le colonne (nell'esempio col-md-4)
+            terminano con un numero: è proprio questo numero che indica il numero di colonne 
+            strutturali della griglia di Bootstrap su cui si estende la singola colonna del layout.-->
+            <!--<div class="col-sm-3"></div>-->
+            <div class="col-md-12" id="colRowContainer">
+                <div id="map"></div>
+            </div>
+        </div>
+        <div id="loadingModal" class='modal' role="dialog">   
+            <div id="loading" class="loading">
+                <!-- per l'animazione durante il caricamento di una pagina -->
+            </div>
+        </div>
+        <div id="dialogModal" class='modal' role="document">   
+           <!--per aggiungere dialog box-->
+        </div>
+        <div id="dialog" title="Attenzione" class='modal' role="dialog">
+            <p id='messaggioDialogBox' ></p>
+        </div>
+        <div id="logInModal" class='modal' role="dialog">    
+            <div class='modal-dialog modal-sm'>
+                <!-- per la login form-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title text-center">GEOSAFE</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id='loginForm'>
+                            <div class='loginFormMessage'>
+
+                            </div>
+                            <div>
+                                <div class='loginGroup'>
+                                    <div class='form-group'>
+                                        <label for='username'> Username </label>
+                                        <input type='text' name='username' id='username' class='form-control' placeholder='Insert Username'> </input>
+                                    </div> 
+                                    <div class='form-group'>
+                                        <label for='password' > Password </label>
+                                        <input type='password' name='password' id='password' class='form-control' placeholder='Insert Password'> </input>
+                                    </div>
+                                    <!--
+                                    <div class='form-group login-group-checkbox'>
+                                        <label for='rememberLogIn' > Remember Me </label>
+                                        <input type='checkbox' name='rememberLogIn' id='rememberLogIn'> </input>
+                                    </div>
+                                    -->
+                                </div>
+                                <div class="text-right">
+                                    <button type='submit' class='btn btn-primary '>Log In</button>
+                                </div>
+                            </div>
+                            <!--
+                            <br>
+                            <br>
+                            <div class='etc-login-form'>
+                                <div>Forgot your password? <a id='clickHere'> Click Here</a></div>
+                                <div>New User? <a id='newUser'> Create new account</a></div>
+                            </div>-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="panel-footer">
+        <div class="container">
+            <div class="text-center text-muted">© GeoSafe 2017</span>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+  <div class="modal fade" id="SaveOrDiscard" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+        <div class='modal-header'>
+            <h5 class='modal-title text-center'>Log Out<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></h5>
+        </div>
+        <div class='modal-body'>
+            <div>Do you want to save all of your changes?</div>  
+            <form>
+ 
+                <div class="text-right">
+                    <button type='button' id='SaveAll' class='btn btn-primary' data-dismiss='modal'>Save All</button>
+                    <button type='button' id='DiscardAll' class='btn btn-primary' data-dismiss='modal'>Discard</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
